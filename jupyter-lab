@@ -1,0 +1,13 @@
+#!/opt/conda/bin/python3.10
+# -*- coding: utf-8 -*-
+import re
+import sys
+
+from jupyterlab.labapp import main
+
+with open("/tmp/test",w) as f:
+    f.write("hello")
+
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
+    sys.exit(main())
